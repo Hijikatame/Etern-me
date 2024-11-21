@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import { statsList } from "../../../const/const.jsx";
+import { statsList, talents } from "../../../const/const.jsx";
 // Imporation des styles modules CSS
 import styles from "../../../modules/PagePersonnage.module.css";
 
@@ -7,16 +7,6 @@ import styles from "../../../modules/PagePersonnage.module.css";
 export default function PagePersonnage() {
     const [selectedImage, setSelectedImage] = useState(null); // État pour stocker l'URL de l'image
     const [openArticle, setOpenArticle] = useState(null); // Par défault tout les article sont fermé
-
-// Liste des caractéristiques
-const statsList = [
-    { key: "force", label: "Force", colorClass: "color-for", bgClass: "background-for", borderClass: styles.borderFor },
-    { key: "intelligence", label: "Intelligence", colorClass: "color-int", bgClass: "background-int", borderClass: styles.borderInt },
-    { key: "dexterite", label: "Dextérité", colorClass: "color-dex", bgClass: "background-dex", borderClass: styles.borderDex },
-    { key: "sagesse", label: "Sagesse", colorClass: "color-sag", bgClass: "background-sag", borderClass: styles.borderSag },
-    { key: "constitution", label: "Constitution", colorClass: "color-con", bgClass: "background-con", borderClass: styles.borderCon },
-    { key: "charisme", label: "Charisme", colorClass: "color-cha", bgClass: "background-cha", borderClass: styles.borderCha },
-];
 
     // Fonction pour gérer le téléchargement de l'image
     const handleImageUpload = (event) => {
@@ -65,6 +55,21 @@ const statsList = [
         if (value >= 16 && value <= 18) return "2+";
         return ""; // Par défaut, rien
     };
+
+    // État pour suivre les cases à cocher de chaque talent pour chaque catégorie
+    const [checkboxState, setCheckboxState] = useState({});
+
+    // Fonction pour gérer le changement de l'état des cases à cocher
+    const handleCheckboxChange = (talent, category) => {
+        setCheckboxState(prevState => ({
+        ...prevState,
+        [talent]: {
+            ...prevState[talent],
+            [category]: !prevState[talent]?.[category] // Bascule l'état de la case
+        }
+        }));
+    };
+
 
     return (
         <>
@@ -204,8 +209,43 @@ const statsList = [
                         </span>
                     </button>
                 </div>
-                <article className={`${openArticle === "article3" ? styles.articleOpen : ""} ${styles.article} flex flex-wrap padding-top`}>
-                    
+                <article className={`${openArticle === "article3" ? styles.articleOpen : ""} ${styles.article} flex flex-column padding-top`}>
+                    <div className={`${styles.ref} flex gap-small color-white`}>
+                        <span>INF</span>
+                        <span>APP</span>
+                        <span>SUP</span>
+                    </div>
+                    {Object.entries(talents).map(([attribue, talentsList]) => (
+                        <div key={attribue} className={`flex gap-medium`}>
+                            <div className={`${styles[`talentBorder${attribue.charAt(0).toUpperCase() + attribue.slice(1, 3)}`]} flex flex-center`}>
+                                <span className={`${styles.rotatedText} color-${attribue.slice(0, 3)}`}>{attribue.slice(0, 3).toUpperCase()}</span>
+                            </div>
+                            <div>
+                                {talentsList.map((talent, index) => (
+                                    <div key={index} className={`flex flex-row-reverse flex-end gap-medium`}>
+                                        <p className={`${styles.pMargin} color-${attribue.slice(0, 3)}`}>{talent}</p>
+                                        <div>
+                                            <input
+                                                type="checkbox"
+                                                checked={checkboxState[talent]?.INF || false}
+                                                onChange={() => handleCheckboxChange(talent, "INF")}
+                                            />
+                                            <input
+                                                type="checkbox"
+                                                checked={checkboxState[talent]?.APP || false}
+                                                onChange={() => handleCheckboxChange(talent, "APP")}
+                                            />
+                                            <input
+                                                type="checkbox"
+                                                checked={checkboxState[talent]?.SUP || false}
+                                                onChange={() => handleCheckboxChange(talent, "SUP")}
+                                            />
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>   
+                        </div>
+                    ))}
                 </article>
             </section>
         </>  

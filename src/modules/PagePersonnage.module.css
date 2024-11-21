@@ -144,3 +144,40 @@
 .paddingBottom {
     padding-bottom: 3.5vh;
 }
+.pMargin {
+    margin-bottom: 0;
+}
+.talentBorderFor {
+    border-right: 2px solid var(--color--for);
+    width: 10%;
+}
+.talentBorderDex {
+    border-right: 2px solid var(--color--dex);
+    width: 10%;
+}
+.talentBorderCon {
+    border-right: 2px solid var(--color--con);
+    width: 10%;
+}
+.talentBorderInt {
+    border-right: 2px solid var(--color--int);
+    width: 10%;
+}
+.talentBorderSag {
+    border-right: 2px solid var(--color--sag);
+    width: 10%;
+}
+.talentBorderCha {
+    border-right: 2px solid var(--color--cha);
+    width: 10%;
+}
+.rotatedText {
+    display: inline-block;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    text-align: center;
+}
+.ref {
+    margin-left: 14%;
+    font-size: .8rem;
+}

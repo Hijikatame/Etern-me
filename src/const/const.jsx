@@ -1,5 +1,7 @@
+import styles from "../modules/PagePersonnage.module.css";
+
 // Liste des caractéristiques
-const statsList = [
+export const statsList = [
     { key: "force", label: "Force", colorClass: "color-for", bgClass: "background-for", borderClass: styles.borderFor },
     { key: "intelligence", label: "Intelligence", colorClass: "color-int", bgClass: "background-int", borderClass: styles.borderInt },
     { key: "dexterite", label: "Dextérité", colorClass: "color-dex", bgClass: "background-dex", borderClass: styles.borderDex },
@@ -9,7 +11,7 @@ const statsList = [
 ];
 
 // Liste des talents
-const talents = {
+export const talents = {
     force: ["Athlétisme"],
     dexterite: ["Acrobatie", "Arts manuels", "Discrétion", "Équitation", "Habilité"],
     constitution: ["Endurance"],

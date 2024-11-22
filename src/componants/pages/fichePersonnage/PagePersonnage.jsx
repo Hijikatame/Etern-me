@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { statsList, talents } from "../../../const/const.jsx";
+import { statsList, talents, diversList } from "../../../const/const.jsx";
 // Imporation des styles modules CSS
 import styles from "../../../modules/PagePersonnage.module.css";
 
@@ -178,7 +178,7 @@ export default function PagePersonnage() {
                                     {getIndice(stats[key])}
                                 </span>
                             </div>
-                            <div className={`flex flex-center relative ${styles.divInputSmall}`}>
+                            <div className={`flex flex-center relative ${styles.divInputCarac}`}>
                                 <img
                                     src=""
                                     alt={`Pictogramme ${label}`}
@@ -244,6 +244,42 @@ export default function PagePersonnage() {
                                     </div>
                                 ))}
                             </div>   
+                        </div>
+                    ))}
+                </article>
+                <div className={`redirection`}>
+                    <button
+                        className="flex flex-center flex-space-between color-white width100"
+                        onClick={() => handleToggleArticle("article4")} // Identifiant unique
+                    >
+                        <h2>Divers</h2>
+                        <span
+                            className={`${styles.rotate} ${
+                                openArticle === "article4" ? styles.rotateOpen : ""
+                            }`}
+                        >
+                            ➤
+                        </span>
+                    </button>
+                </div>
+                <article className={`${openArticle === "article4" ? styles.articleOpen : ""} ${styles.article} flex flex-wrap padding-top`}>
+                    {diversList.map(({key, label, bgClass, borderClass}) => (
+                        <div
+                            key={key}
+                            className={`${styles.divInputSmall} ${styles.paddingBottom} flex flex-column-reverse flex-center relative`}
+                        >
+                            <span className={`absolute ${bgClass} ${styles.spanDivers}`}>{label}</span>
+                            {/* Input pour chaque elements */}
+                            <input
+                                        type="number"
+                                        placeholder="Actuel"
+                                        className={`${styles.input} ${styles.inputCarac} ${styles.inputDivers} ${borderClass}`}
+                            />
+                            <span
+                            className={`${styles.imgInput} ${styles.spanMax} ${borderClass} absolute flex flex-center`}
+                        >
+                        </span>
+
                         </div>
                     ))}
                 </article>

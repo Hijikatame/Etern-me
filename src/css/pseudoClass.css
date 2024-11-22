@@ -52,6 +52,12 @@
     --color--int: #1e2c49;
     --color--sag: #481d3a;
     --color--cha: #3db4b9;
+
+    --color--ini: #A1201A;
+    --color--pr: #FDC74F;
+    --color--dd: #8299CE;
+    --color--vitesse: #F3914A;
+    --color--fatigue: #2C2E35;
 }
 /* usage : 
 color: var(--color--white)
@@ -113,6 +119,21 @@ color: var(--color--white)
 }
 .background-cha {
     background-color: var(--color--cha);
+}
+.background-ini {
+    background-color: var(--color--ini);
+}
+.background-pr {
+    background-color: var(--color--pr);
+}
+.background-dd {
+    background-color: var(--color--dd);
+}
+.background-vitesse {
+    background-color: var(--color--vitesse);
+}
+.background-fatigue {
+    background-color: var(--color--fatigue);
 }
 
 /* Color */

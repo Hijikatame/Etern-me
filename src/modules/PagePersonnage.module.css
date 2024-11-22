@@ -34,7 +34,7 @@
     border-radius: 50%;
     width: 7vh;
     height: 7vh;
-    background-color: black;
+    background-color: var(--color--white);
 }
 .input {
     border: none;
@@ -129,6 +129,10 @@
     background-color: var(--color--white);
 }
 
+.divInputCarac {
+    width: 65%;
+}
+
 .inputCarac {
     width: 70%;
     height: 10vh;
@@ -181,3 +185,42 @@
     margin-left: 14%;
     font-size: .8rem;
 }
+
+.inputDivers {
+    height: 8vh;
+    margin-top: 0;
+    border-radius: var(--spacing--12) 0 var(--spacing--12) 0;
+}
+.spanMax {
+    left: 0;
+    bottom: 0;
+}
+.spanDivers {
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: 70%;
+    margin-left: 3vh;
+    text-align: center;
+    border-radius: var(--spacing--12) 0 0 0;
+    text-transform: uppercase;
+    color: var(--color--white);
+}
+
+.borderIni {
+    border: 2px solid var(--color--ini);
+}
+.borderPr {
+    border: 2px solid var(--color--pr);
+}
+.borderDd {
+    border: 2px solid var(--color--dd);
+}
+.borderVitesse {
+    border: 2px solid var(--color--vitesse);
+}
+.borderFatigue {
+    border: 2px solid var(--color--fatigue);
+}
+
+

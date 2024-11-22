@@ -19,3 +19,12 @@ export const talents = {
     sagesse: ["Calme", "Discernement", "Perception", "Survie"],
     charisme: ["Charme", "Commandement", "Domptage", "Intimidation", "Performance"]
 };
+
+// Liste divers
+export const diversList = [
+    { key: "initiative", label: "initiative", bgClass: "background-ini", borderClass: styles.borderIni },
+    { key: "PR", label: "PR", bgClass: "background-pr", borderClass: styles.borderPr },
+    { key: "DD", label: "DD", bgClass: "background-dd", borderClass: styles.borderDd },
+    { key: "Vitesse", label: "Vitesse", bgClass: "background-vitesse", borderClass: styles.borderVitesse },
+    { key: "Fatigue", label: "Fatigue", bgClass: "background-fatigue", borderClass: styles.borderFatigue },
+];

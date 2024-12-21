@@ -277,9 +277,8 @@ export default function PagePersonnage() {
                             />
                             <span
                             className={`${styles.imgInput} ${styles.spanMax} ${borderClass} absolute flex flex-center`}
-                        >
-                        </span>
-
+                            >
+                            </span>
                         </div>
                     ))}
                 </article>

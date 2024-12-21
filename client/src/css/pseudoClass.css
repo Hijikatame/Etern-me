@@ -256,7 +256,7 @@ color: var(--color--white)
 
 /* Tailles */
 .height100 {
-    height: 100vh;
+    min-height: 100vh;
 }
 .width100 {
     width: 100%;
@@ -293,6 +293,21 @@ color: var(--color--white)
 /* Case */
 .uppercase {
     text-transform: uppercase;
+}
+
+.button {
+    text-align: center;
+    padding: var(--spacing--12) var(--spacing--6);
+}
+
+.button:hover {
+    background-color: var(--color--castlegreen);
+}
+
+.input {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    height: var(--spacing--24);
 }
 
 
